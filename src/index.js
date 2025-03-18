@@ -1,18 +1,28 @@
 // index.js
-import "./styles/styles.css";
-import { greeting } from "./greeting.js";
-import loadHome from "./home.js";
-import loadMenu from "./menu.js";
-import loadAbout from "./about.js";
-console.log(greeting);
-console.log("Webpack working");
+import "./styles/global.css"
+import loadHome from "./pages/home.js";
+import loadMenu from "./pages/menu.js";
+import loadAbout from "./pages/about.js";
 
-//Run home page by default
-document.addEventListener("DOMContentLoaded", () => {
-    loadHome();
-})
+let contentDiv = document.querySelector("#content");
 
-//button event listener
-document.getElementById("home-btn").addEventListener("click" , loadHome);
-document.getElementById("menu-btn").addEventListener("click" , loadMenu);
-document.getElementById("about-btn").addEventListener("click" , loadAbout);
+let homeNav = document.querySelector("#home-btn");
+let menuNav = document.querySelector("#menu-btn");
+let aboutNav = document.querySelector("#about-btn");
+
+homeNav.addEventListener("click", () => {
+    contentDiv.textContent = '';
+    contentDiv.appendChild(loadHome());
+});
+
+menuNav.addEventListener("click", () => {
+    contentDiv.textContent = '';
+    contentDiv.appendChild(loadMenu());
+});
+
+aboutNav.addEventListener("click", () => {
+    contentDiv.textContent = '';
+    contentDiv.appendChild(loadAbout());
+});
+
+contentDiv.appendChild(loadHome());

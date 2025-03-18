@@ -1,0 +1,163 @@
+/* styles.css */
+*{
+    font-family: "Cormorant Garamond";
+    color: white;
+}
+
+@keyframes slide-from-left {
+  from {
+      transform: translateX(-10%);
+  } to {
+      transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+      transform: translateX(10%);
+  } to {
+      transform: translateX(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+      transform: translateY(20%);
+  } to {
+      transform: translateY(0);
+  }
+}
+
+@keyframes slide-up-short {
+  from {
+      transform: translateY(5%);
+  } to {
+      transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+      transform: translateY(-20%);
+  } to {
+      transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+      opacity: 0;
+  } to {
+      opacity: 1;
+  }
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--olive-green);
+  padding: 1.5rem;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  transition: background-color 300ms ease;
+}
+
+.body-home {
+  background-image: url("../assets/images/restaurant.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px;
+}
+
+header button {
+  background: none;
+  border: none;
+}
+
+header button:hover {
+  cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav button {
+  transition: all 300ms ease;
+}
+
+nav button:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+#content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.image {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-style: italic;
+}
+
+.image a {
+  text-decoration: none;
+}
+
+.image a:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+@media (max-width: 1200px) {  
+  footer {
+      justify-content: center;
+      margin-top: 9rem;
+      margin-bottom: 1rem;
+  }
+
+  .image {
+      text-align: center;
+      position: absolute;
+      bottom: 5rem;
+      right: 50%;
+      transform: translateX(50%);
+  }
+  
+  .image a {
+      text-decoration: underline;
+      text-underline-offset: 8px;
+  }
+}
